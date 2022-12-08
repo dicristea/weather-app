@@ -1,45 +1,88 @@
-# Getting Started with Create React App
+## Project: Weather App
 
+A weather app created using React.js exploring the usage and implementation of APIs, ASYNC js, and useEffect() and other hooks. The project is inspired by The Odin Project curriculum.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<a href="https://dicristea.github.io/weather-app/">🔗Live Preview</a>
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Search city location weather forecast
+- View weather temperature, visibility, rain chance, and 'feels like' temp. at specified location
+  today and one week in the future
+- See general weather information for current time up to 1 week in the future
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Todos
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- EVERYTHING
+- Make UI responsive for phone screens
 
-### `npm test`
+## Tools
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- OpenWeather API
+- React & ES7 JS
+- ESLint + Airbnb JavaScript Style Guide
+- Prettier Code Formatter
 
-### `npm run build`
+## What I learned
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ES7 & Async JS (try/catch, Promise/then, async/await)
+- working with APIs
+- React: useEffect and other hooks
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Implemented ES6/react modules for organizing code.
+  - React functionality: state, props, class components, ES6
+- Set up Web Storage API for storing data
+  - practice with Arrays, Objects, and Key value storage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## REACT TIPS
 
-### `npm run eject`
+- when adding components on click to DOM
+  => add via an object from data storage that renders with newly updated state (Education/Experience components)
+- if something is rendering twice
+  => Strictmode problem? https://stackoverflow.com/questions/66464124/update-inside-react-usestate-setter-being-called-twice
+- Instead of "Prop drilling", use global variable called React Context/ useContext()
+  => https://stackoverflow.com/questions/69675357/react-what-is-the-proper-way-to-do-global-state
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technical Tips
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Use gh-pages to host page on github
+  -> https://github.com/gitname/react-gh-pages
+  -> run `npm run deploy`
+- localStorage cannot hold any data type except for strings
+  → JSON data (use JSON.parse(string to object), JSON.stingify(any type to string) methods)
+- `window.location.reload(false)`
+  - reloads page to trigger localStorage display update
+  - Project list and Main.js > `handleEdit` update happen automatically → maybe bc it is being sent to parent component and `state` that causes rerender
+- For inline styling:
+  - React will automatically append a “px” suffix to certain numeric inline style properties. If you want to use units other than “px”, specify the value as a string with the desired unit.
+- Can use ternary operator or utils js for repeated parts
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Sources
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Mountain Background:
+  Photo by <a href="https://unsplash.com/@stephenleo1982?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Stephen Leonardi</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
-## Learn More
+- Favicon/logo:
+  <a href="https://www.flaticon.com/free-icons/smile" title="smile icons">Smile icons created by Freepik - Flaticon</a>
+
+- Menu Icons:
+  <a href="https://www.flaticon.com/free-icons/menu" title="menu icons">Menu icons created by Febrian Hidayat - Flaticon</a>
+  <a href="https://fonts.google.com/icons">Google Icons</a>
+
+## Future Updates:
+
+- Beautify date formatting! Very ugly right now (not using [date-fns](https://github.com/date-fns/date-fns))
+- display task updates → use different method rather than `window.location.reload(false)` in Tasklist.js > `handledelete`, App.js > `removeProject`, `createProject`
+
+Other Updates:
+
+- Beautify code with best industry practices!
+  -> not supposed to change passed props but ok for now (Popup.js > handleTask, )
+- Accessibility: Windows High Contrast mode --will not see the box-shadow or be able to detect the border color change
+  --> try to make 'outline: 3px solid transparent;' work(????)
+
+## Learn More: REACT
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 

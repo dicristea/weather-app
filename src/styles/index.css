@@ -1,0 +1,74 @@
+:root {
+  --dark-accent: #000000;
+  --body-color: #edf2fd;
+  --card-color: white;
+  --accent: #5c8aee;
+  --box-shadow: rgba(128, 128, 128, 0.228);
+  --border-radius: 7px;
+  --link: #61dafb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  padding: 10px 0;
+}
+
+h3 {
+  padding-right: 10px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #ddd;
+  justify-self: left;
+}
+
+a {
+  color: var(--link);
+}
+
+button {
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 7px 10px;
+  cursor: pointer;
+  background-color: rgb(231, 231, 231);
+}
+
+button:hover {
+  background-color: #b8c2d6;
+}
+
+button:active {
+  background-color: rgb(231, 231, 231);
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 20px 30px;
+}
+
+.sourceGithub {
+  height: auto;
+  width: 25px;
+}

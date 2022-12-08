@@ -1,14 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles/App.css";
+import Footer from "./components/Footer";
+import logo from "./assets/sun.png";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <img src={logo} alt="Happy Sun Weather Logo" className="App-logo" />
+        <h1>Weather Forecast</h1>
+        <br />
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -18,6 +18,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Footer></Footer>
     </div>
   );
 }
