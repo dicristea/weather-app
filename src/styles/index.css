@@ -1,9 +1,10 @@
 :root {
-  --dark-accent: #000000;
+  --dark-accent: #0d4a6e;
   --body-color: #edf2fd;
   --card-color: white;
-  --accent: #5c8aee;
-  --box-shadow: rgba(128, 128, 128, 0.228);
+  --teal-accent: #086da7;
+  --red-accent: #bd3fac;
+  --box-shadow: 0px 5px 10px rgba(128, 128, 128, 0.412);
   --border-radius: 7px;
   --link: #61dafb;
 }
@@ -19,12 +20,16 @@ code {
     monospace;
 }
 
+html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  margin: 0 auto;
+  /* max-width: 100vw; */
 }
 
 h1 {
@@ -34,8 +39,6 @@ h1 {
 h3 {
   padding-right: 10px;
   padding-bottom: 4px;
-  border-bottom: 1px solid #ddd;
-  justify-self: left;
 }
 
 a {
@@ -45,7 +48,6 @@ a {
 button {
   border: none;
   border-radius: var(--border-radius);
-  padding: 7px 10px;
   cursor: pointer;
   background-color: rgb(231, 231, 231);
 }

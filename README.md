@@ -26,14 +26,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## What I learned
 
-- ES7 & Async JS (try/catch, Promise/then, async/await)
-- working with APIs
 - React: useEffect and other hooks
-
-- Implemented ES6/react modules for organizing code.
-  - React functionality: state, props, class components, ES6
-- Set up Web Storage API for storing data
-  - practice with Arrays, Objects, and Key value storage
+  => https://blog.logrocket.com/modern-api-data-fetching-methods-react/
+- ES7 & Async JS (try/catch, Promise/then, async/await)
+- working with APIs (API keys, endpoints, error handling)
 
 ## REACT TIPS
 
@@ -46,6 +42,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Technical Tips
 
+- reset error and other data when working in .then() and .catch() to "prevent inconsistencies for temporary server failiure"
+- type="button" prevents button default of refreshing the page
 - Use gh-pages to host page on github
   -> https://github.com/gitname/react-gh-pages
   -> run `npm run deploy`
@@ -53,7 +51,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   → JSON data (use JSON.parse(string to object), JSON.stingify(any type to string) methods)
 - `window.location.reload(false)`
   - reloads page to trigger localStorage display update
-  - Project list and Main.js > `handleEdit` update happen automatically → maybe bc it is being sent to parent component and `state` that causes rerender
 - For inline styling:
   - React will automatically append a “px” suffix to certain numeric inline style properties. If you want to use units other than “px”, specify the value as a string with the desired unit.
 - Can use ternary operator or utils js for repeated parts
@@ -64,7 +61,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   Photo by <a href="https://unsplash.com/@stephenleo1982?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Stephen Leonardi</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 - Favicon/logo:
-  <a href="https://www.flaticon.com/free-icons/smile" title="smile icons">Smile icons created by Freepik - Flaticon</a>
+  <a href="https://www.flaticon.com/free-icons/weather-app" title="weather app icons">Weather app icons created by Freepik - Flaticon</a>
 
 - Menu Icons:
   <a href="https://www.flaticon.com/free-icons/menu" title="menu icons">Menu icons created by Febrian Hidayat - Flaticon</a>

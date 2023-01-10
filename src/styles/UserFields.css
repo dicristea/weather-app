@@ -1,0 +1,127 @@
+/* FORM */
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+label {
+  display: none;
+}
+
+input {
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+  border: none;
+  padding: 8px 0px;
+}
+
+input:focus {
+  border-bottom: 1px solid var(--dark-accent);
+}
+
+button {
+  border-radius: 17px;
+  width: 3em;
+  height: 3em;
+}
+
+/* MEASUREMENT C/F TOGGLE BUTTON */
+.toggle {
+  /* touch-action: pan-x enables single*/
+  touch-action: pan-x;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  /* controls whether the user can select text */
+  -webkit-user-select: none;
+  user-select: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.toggle-check,
+.toggle-uncheck {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.toggle-check {
+  left: 10px;
+}
+
+.toggle-uncheck {
+  opacity: 1;
+  right: 10px;
+}
+
+.toggle-uncheck span,
+.toggle-check span {
+  align-items: center;
+  display: flex;
+  height: 10px;
+  justify-content: center;
+  position: relative;
+  width: 10px;
+  color: white;
+}
+
+.toggle-container {
+  width: 50px;
+  height: 24px;
+  padding: 0;
+  border-radius: 30px;
+  background-color: var(--teal-accent);
+  transition: all 0.2s ease;
+}
+
+.toggle-circle {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #fafafa;
+  transition: all 0.25s ease;
+}
+
+.toggle--checked .toggle-container {
+  background-color: var(--red-accent);
+}
+
+.toggle--checked .toggle-check {
+  opacity: 1;
+}
+
+.toggle--checked .toggle-uncheck {
+  opacity: 0;
+}
+
+.toggle--checked .toggle-circle {
+  left: 27px;
+}

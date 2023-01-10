@@ -1,0 +1,62 @@
+.weatherToday {
+  /* font-size: 10px + 2vmin; */
+  display: grid;
+  row-gap: 20px;
+}
+
+.today-top-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.today-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.today-main > h2,
+.today-main > h3 {
+  text-align: left;
+}
+
+.display-info {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.display-info.small {
+  font-size: 1.5rem;
+}
+
+.img-container > img {
+  width: 15vmin;
+  height: auto;
+}
+
+.today-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin: 15px;
+}
+
+.hourly {
+  grid-column: 1 / 3;
+}
+
+/* TodayInfo */
+
+.img-container.small > img {
+  width: 15vmin;
+  height: auto;
+}
+
+.today-grid > div.small.card {
+  padding: 15px;
+  border: 5px solid rgb(253, 252, 245);
+}
+
+.card-header > :first-child {
+  padding-bottom: 15px;
+}
