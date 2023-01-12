@@ -10,16 +10,12 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const [coordinates, setCoordinates] = useState(null);
-  const [coordinatesLoading, setCoordinatesLoading] = useState(true);
-  const [coordinatesError, setCoordinatesError] = useState(null);
-
   const [weekData, setWeekData] = useState(null);
   const [weekLoading, setWeekLoading] = useState(true);
   const [weekError, setWeekError] = useState(null);
 
   const [isMetric, setIsMetric] = useState(false);
-  const [userLocation, setUserLocation] = useState("Los Angeles, usa");
+  const [userLocation, setUserLocation] = useState("Los Angeles");
 
   const updateLocation = (newLocation) => {
     if (newLocation === "") {
@@ -38,7 +34,8 @@ const App = () => {
       try {
         console.log(userLocation);
         const response = await fetch(
-          `http://api.openweathermap.org/data/2.5/weather?q=${userLocation}&APPID=f712ca0d0609a5a2b7368dcc5e968c4b`
+          `http://api.openweathermap.org/data/2.5/weather?q=${userLocation}&APPID=f712ca0d0609a5a2b7368dcc5e968c4b`,
+          { mode: "cors" }
         );
         if (!response.ok) {
           throw new Error(
@@ -59,54 +56,49 @@ const App = () => {
   }, [userLocation]);
 
   useEffect(() => {
-    const getLocationCoords = async () => {
-      try {
-        const response = await fetch(
-          `http://api.openweathermap.org/geo/1.0/direct?q=${userLocation}&limit=&appid=f712ca0d0609a5a2b7368dcc5e968c4b`
-        );
-        if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
+    const getWeekData = () => {
+      fetch(
+        `http://api.openweathermap.org/geo/1.0/direct?q=${userLocation}&limit=1&appid=f712ca0d0609a5a2b7368dcc5e968c4b`,
+        { mode: "cors" }
+      )
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw response;
+        })
+        .then((response) => {
+          return fetch(
+            `http://api.openweathermap.org/data/2.5/forecast?lat=${response[0].lat}&lon=${response[0].lon}&appid=f712ca0d0609a5a2b7368dcc5e968c4b`,
+            { mode: "cors" }
           );
-        }
-        let actualData = await response.json();
-
-        console.log(`lat=${actualData[0].lat}&lon=${actualData[0].lon}`);
-        setCoordinates(`lat=${actualData[0].lat}&lon=${actualData[0].lon}`);
-        setCoordinatesError(null);
-      } catch (err) {
-        setCoordinatesError(err.message);
-        setCoordinates(null);
-      } finally {
-        setCoordinatesLoading(false);
-      }
-    };
-    getLocationCoords();
-  }, [userLocation]);
-
-  useEffect(() => {
-    const getWeekData = async () => {
-      try {
-        const response = await fetch(
-          `api.openweathermap.org/data/2.5/forecast?${coordinates}&appid=f712ca0d0609a5a2b7368dcc5e968c4b`
-        );
-        if (!response.ok) {
-          throw new Error(
-            `This is an HTTP error: The status is ${response.status}`
-          );
-        }
-        let actualData = await response.json();
-        setWeekData(actualData);
-        setWeekError(null);
-      } catch (err) {
-        setWeekError(err.message);
-        setWeekData(null);
-      } finally {
-        setWeekLoading(false);
-      }
+        })
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          setWeekError(err.message);
+          setWeekData(null);
+        })
+        .then((response) => {
+          console.log(response);
+          setWeekData(response);
+          setWeekError(null);
+        })
+        .catch((err) => {
+          console.log(err);
+          setWeekError(err.message);
+          setWeekData(null);
+        })
+        .finally(() => {
+          setWeekLoading(false);
+        });
     };
     getWeekData();
-  }, [coordinates]);
+  }, [userLocation]);
 
   return (
     <div className="App-bg">

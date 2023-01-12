@@ -21,8 +21,8 @@ const WeatherToday = ({ isLoading, data, units }) => {
               <h2>
                 {data.name}, {data.sys.country}
               </h2>
+              <div className="date">{getCurrentDate()}</div>
               <h3>Today, {!isLoading && getCurrentTime(data)}</h3>
-              <h3>{getCurrentDate()}</h3>
               <div className="img-container">
                 <img src={PlaceholderImage} alt="Icon for weather" />
               </div>
@@ -33,30 +33,34 @@ const WeatherToday = ({ isLoading, data, units }) => {
           )}
         </div>
         <div className="today-grid">
-          <TodayInfo
-            title={"Feels Like"}
-            isLoading={isLoading}
-            data={data}
-            units={units}
-          ></TodayInfo>
-          <TodayInfo
-            title={"Humidity"}
-            isLoading={isLoading}
-            data={data}
-            units={units}
-          ></TodayInfo>
-          <TodayInfo
-            title={"Precipitation"}
-            isLoading={isLoading}
-            data={data}
-            units={units}
-          ></TodayInfo>
-          <TodayInfo
-            title={"Winds"}
-            isLoading={isLoading}
-            data={data}
-            units={units}
-          ></TodayInfo>
+          <div className="grid-top">
+            <TodayInfo
+              title={"Feels Like"}
+              isLoading={isLoading}
+              data={data}
+              units={units}
+            ></TodayInfo>
+            <TodayInfo
+              title={"Humidity"}
+              isLoading={isLoading}
+              data={data}
+              units={units}
+            ></TodayInfo>
+          </div>
+          <div className="grid-bottom">
+            <TodayInfo
+              title={"Chance of Rain"}
+              isLoading={isLoading}
+              data={data}
+              units={units}
+            ></TodayInfo>
+            <TodayInfo
+              title={"Winds"}
+              isLoading={isLoading}
+              data={data}
+              units={units}
+            ></TodayInfo>
+          </div>
         </div>
       </div>
       <div className="hourly">

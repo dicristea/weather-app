@@ -1,7 +1,7 @@
-.weatherToday {
-  /* font-size: 10px + 2vmin; */
-  display: grid;
-  row-gap: 20px;
+/* Where "Loading" data will appear */
+.display {
+  display: flex;
+  flex-direction: column;
 }
 
 .today-top-container {
@@ -10,35 +10,34 @@
 }
 
 .today-main {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .today-main > h2,
-.today-main > h3 {
+.today-main > h3,
+.date {
   text-align: left;
 }
 
 .display-info {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 600;
+  padding: 10px 0;
 }
 
-.display-info.small {
-  font-size: 1.5rem;
+.img-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .img-container > img {
-  width: 15vmin;
-  height: auto;
-}
-
-.today-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
-  margin: 15px;
+  width: auto;
+  height: 200px;
 }
 
 .hourly {
@@ -47,14 +46,32 @@
 
 /* TodayInfo */
 
+.today-grid {
+  margin: 15px;
+  display: grid;
+  gap: 25px;
+}
+
+.grid-top,
+.grid-bottom {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 25px;
+}
+
+.grid-top > div.small.card,
+.grid-bottom > div.small.card {
+  padding: 15px;
+  border: 5px solid rgb(253, 252, 245);
+}
+
 .img-container.small > img {
-  width: 15vmin;
+  width: 6vmin;
   height: auto;
 }
 
-.today-grid > div.small.card {
-  padding: 15px;
-  border: 5px solid rgb(253, 252, 245);
+.display-info.small {
+  font-size: 1.2rem;
 }
 
 .card-header > :first-child {

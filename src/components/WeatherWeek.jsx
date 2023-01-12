@@ -10,7 +10,7 @@ const WeatherWeek = ({ isLoading, weekData, units }) => {
       {isLoading && <div className="info">Loading...</div>}
       {!isLoading && (
         <div className="main-weather-info">
-          <h3>{console.log(weekData)}</h3>
+          {/* <h3>{console.log(weekData)}</h3> */}
           {/* <h3>{conversion(units, weekData.main.temp)}</h3> */}
         </div>
       )}

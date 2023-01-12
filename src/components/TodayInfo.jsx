@@ -6,7 +6,9 @@ const TodayInfo = ({ title, isLoading, data, units }) => {
   return (
     <div className="card small">
       <div className="card-header">
-        <h2>{title}</h2>
+        <div>
+          <strong>{title}</strong>
+        </div>
       </div>
       <div className="display">
         {isLoading && <div className="loading">Loading...</div>}
