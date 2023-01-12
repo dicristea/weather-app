@@ -34,7 +34,7 @@ const App = () => {
       try {
         console.log(userLocation);
         const response = await fetch(
-          `http://api.openweathermap.org/data/2.5/weather?q=${userLocation}&APPID=f712ca0d0609a5a2b7368dcc5e968c4b`,
+          `https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&APPID=f712ca0d0609a5a2b7368dcc5e968c4b`,
           { mode: "cors" }
         );
         if (!response.ok) {
@@ -58,7 +58,7 @@ const App = () => {
   useEffect(() => {
     const getWeekData = () => {
       fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${userLocation}&limit=1&appid=f712ca0d0609a5a2b7368dcc5e968c4b`,
+        `https://api.openweathermap.org/geo/1.0/direct?q=${userLocation}&limit=1&appid=f712ca0d0609a5a2b7368dcc5e968c4b`,
         { mode: "cors" }
       )
         .then((response) => {
@@ -69,7 +69,7 @@ const App = () => {
         })
         .then((response) => {
           return fetch(
-            `http://api.openweathermap.org/data/2.5/forecast?lat=${response[0].lat}&lon=${response[0].lon}&appid=f712ca0d0609a5a2b7368dcc5e968c4b`,
+            `https://api.openweathermap.org/data/2.5/forecast?lat=${response[0].lat}&lon=${response[0].lon}&appid=f712ca0d0609a5a2b7368dcc5e968c4b`,
             { mode: "cors" }
           );
         })
