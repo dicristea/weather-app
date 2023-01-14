@@ -16,6 +16,7 @@
   display: grid;
   grid-template-rows: repeat(3, min-content) 20px;
   gap: 50px;
+  justify-content: center;
 }
 
 .App-logo {

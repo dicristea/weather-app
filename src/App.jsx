@@ -32,7 +32,6 @@ const App = () => {
   useEffect(() => {
     const getTodayData = async () => {
       try {
-        console.log(userLocation);
         const response = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&APPID=f712ca0d0609a5a2b7368dcc5e968c4b`,
           { mode: "cors" }
@@ -65,7 +64,6 @@ const App = () => {
           if (response.ok) {
             return response.json();
           }
-          throw response;
         })
         .then((response) => {
           return fetch(
@@ -78,13 +76,7 @@ const App = () => {
             return response.json();
           }
         })
-        .catch((err) => {
-          console.log(err);
-          setWeekError(err.message);
-          setWeekData(null);
-        })
         .then((response) => {
-          console.log(response);
           setWeekData(response);
           setWeekError(null);
         })

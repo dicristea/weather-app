@@ -9,23 +9,42 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-.today-main {
-  flex: 1;
+@media (max-width: 800px) {
+  .today-top-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.today-top-container > .current.display {
+  padding-bottom: 35px;
+}
+
+.today-info {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.today-main > h2,
-.today-main > h3,
+.today-info > h2,
+.today-info > h3,
 .date {
   text-align: left;
+}
+
+.hourly > .display {
+  padding-bottom: 15px;
+  padding-top: 30px;
+}
+
+.description {
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 
 .display-info {
   font-size: 3rem;
   font-weight: 600;
-  padding: 10px 0;
 }
 
 .img-container {
@@ -47,22 +66,20 @@
 /* TodayInfo */
 
 .today-grid {
-  margin: 15px;
+  margin: 30px 15px;
   display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
   gap: 25px;
 }
 
-.grid-top,
-.grid-bottom {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 25px;
-}
-
-.grid-top > div.small.card,
-.grid-bottom > div.small.card {
+div.small.card {
   padding: 15px;
   border: 5px solid rgb(253, 252, 245);
+  max-width: 200px;
+  min-width: 100px;
+  display: grid;
+  align-items: center;
+  gap: 15px;
 }
 
 .img-container.small > img {
@@ -74,6 +91,9 @@
   font-size: 1.2rem;
 }
 
-.card-header > :first-child {
-  padding-bottom: 15px;
+hr.card-section-line {
+  margin: 10px;
+  width: 300px;
+  margin: auto;
+  border-top: 1px dashed var(--teal-accent);
 }

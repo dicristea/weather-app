@@ -1,87 +1,53 @@
 import React from "react";
-import conversion from "../utils/Conversion";
-import TodayInfo from "./TodayInfo";
-import PlaceholderImage from "../assets/weather-app.png";
 import "../styles/Today.css";
-import { getCurrentDate } from "../utils/GetCurrentDate";
-import { getCurrentTime } from "../utils/GetCurrentTime";
+import CurrentDisplay from "./CurrentDisplay";
+import TodayInfo from "./TodayInfo";
+import feelslike from "../assets/feelslike.png";
+import cloud from "../assets/cloud.png";
+import wind from "../assets/wind.png";
+import humidity from "../assets/humidity.png";
 
 const WeatherToday = ({ isLoading, data, units }) => {
   return (
-    <div className="weatherToday">
+    <div>
       <div className="today-top-container">
-        <div className="current display">
-          {isLoading && (
-            <div className="loading" style={{ placeSelf: "center" }}>
-              Loading...
-            </div>
-          )}
-          {!isLoading && (
-            <div className="today-main">
-              <h2>
-                {data.name}, {data.sys.country}
-              </h2>
-              <div className="date">{getCurrentDate()}</div>
-              <h3>Today, {!isLoading && getCurrentTime(data)}</h3>
-              <div className="img-container">
-                <img src={PlaceholderImage} alt="Icon for weather" />
-              </div>
-              <div className="display-info">
-                {conversion(units, data.main.temp)}
-              </div>
-            </div>
-          )}
-        </div>
+        <CurrentDisplay data={data} isLoading={isLoading}></CurrentDisplay>
         <div className="today-grid">
-          <div className="grid-top">
-            <TodayInfo
-              title={"Feels Like"}
-              isLoading={isLoading}
-              data={data}
-              units={units}
-            ></TodayInfo>
-            <TodayInfo
-              title={"Humidity"}
-              isLoading={isLoading}
-              data={data}
-              units={units}
-            ></TodayInfo>
-          </div>
-          <div className="grid-bottom">
-            <TodayInfo
-              title={"Chance of Rain"}
-              isLoading={isLoading}
-              data={data}
-              units={units}
-            ></TodayInfo>
-            <TodayInfo
-              title={"Winds"}
-              isLoading={isLoading}
-              data={data}
-              units={units}
-            ></TodayInfo>
-          </div>
+          <TodayInfo
+            title={"Feels Like"}
+            isLoading={isLoading}
+            data={data}
+            units={units}
+            src={feelslike}
+          ></TodayInfo>
+          <TodayInfo
+            title={"Humidity"}
+            isLoading={isLoading}
+            data={data}
+            units={units}
+            src={humidity}
+          ></TodayInfo>
+          <TodayInfo
+            title={"Cloudiness"}
+            isLoading={isLoading}
+            data={data}
+            units={units}
+            src={cloud}
+          ></TodayInfo>
+          <TodayInfo
+            title={"Winds"}
+            isLoading={isLoading}
+            data={data}
+            units={units}
+            src={wind}
+          ></TodayInfo>
         </div>
       </div>
+      <hr className="card-section-line" />
       <div className="hourly">
         {/* Image wheel or something here */}
-        <div className="display">
-          {isLoading && <div className="loading">Loading...</div>}
-          {!isLoading && (
-            <div className="today-main">
-              <h2>
-                {data.name}, {data.sys.country}
-              </h2>
-              <div className="img-container">
-                <img src={PlaceholderImage} alt="Icon for weather" />
-              </div>
-              <div className="display-info">
-                {conversion(units, data.main.temp)}
-                {units}
-              </div>
-            </div>
-          )}
-        </div>
+        div.
+        <CurrentDisplay data={data} isLoading={isLoading}></CurrentDisplay>
       </div>
     </div>
   );
