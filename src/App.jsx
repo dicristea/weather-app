@@ -2,8 +2,8 @@ import "./styles/App.css";
 import { useState, useEffect } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import WeatherToday from "./components/WeatherToday";
-import WeatherWeek from "./components/WeatherWeek";
+import WeatherToday from "./components/Today/WeatherToday";
+import WeatherWeek from "./components/Forecast/WeatherWeek";
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -107,6 +107,7 @@ const App = () => {
             isLoading={loading}
             data={data}
             units={isMetric}
+            weekData={weekData}
           ></WeatherToday>
         </div>
         <div className="card">

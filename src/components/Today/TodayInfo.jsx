@@ -1,5 +1,5 @@
 import React from "react";
-import conversion from "../utils/Conversion";
+import conversion from "../../utils/Conversion";
 
 const TodayInfo = ({ title, isLoading, data, units, src }) => {
   return (
@@ -10,7 +10,7 @@ const TodayInfo = ({ title, isLoading, data, units, src }) => {
       <div className="display">
         {isLoading && <div className="loading">Loading...</div>}
         {!isLoading && (
-          <div className="today-info">
+          <div className="flex-column">
             <div className="small img-container">
               <img src={src} alt="Icon for weather" />
             </div>

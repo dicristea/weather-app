@@ -30,6 +30,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   => https://blog.logrocket.com/modern-api-data-fetching-methods-react/
 - ES7 & Async JS (try/catch, Promise/then, async/await)
 - working with APIs (API keys, endpoints, error handling)
+- css media queries
+  --> NEED TO ORGANIZE CSS BETTER!!
 
 ## REACT TIPS
 
@@ -42,7 +44,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Technical Tips
 
-- reset error and other data when working in .then() and .catch() to "prevent inconsistencies for temporary server failiure"
+- reset error and other data (with setState) when working in .then() and .catch() to "prevent inconsistencies for temporary server failiure"
 - type="button" prevents button default of refreshing the page
 - Use gh-pages to host page on github
   -> https://github.com/gitname/react-gh-pages
@@ -69,13 +71,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Future Updates:
 
-- Beautify date formatting! Very ugly right now (not using [date-fns](https://github.com/date-fns/date-fns))
-- display task updates → use different method rather than `window.location.reload(false)` in Tasklist.js > `handledelete`, App.js > `removeProject`, `createProject`
-
-Other Updates:
-
-- Beautify code with best industry practices!
-  -> not supposed to change passed props but ok for now (Popup.js > handleTask, )
 - Accessibility: Windows High Contrast mode --will not see the box-shadow or be able to detect the border color change
   --> try to make 'outline: 3px solid transparent;' work(????)
 

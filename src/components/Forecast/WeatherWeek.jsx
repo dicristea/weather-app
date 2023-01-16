@@ -1,4 +1,5 @@
 import React from "react";
+import HourlyDisplay from "./HourlyDisplay";
 // import conversion from "../utils/Conversion";
 
 const WeatherWeek = ({ isLoading, weekData, units }) => {
@@ -10,8 +11,7 @@ const WeatherWeek = ({ isLoading, weekData, units }) => {
       {isLoading && <div className="info">Loading...</div>}
       {!isLoading && (
         <div className="main-weather-info">
-          {/* <h3>{console.log(weekData)}</h3> */}
-          {/* <h3>{conversion(units, weekData.main.temp)}</h3> */}
+          <HourlyDisplay weekData={weekData} units={units}></HourlyDisplay>
         </div>
       )}
     </div>
