@@ -13,7 +13,7 @@ const Header = ({ isLoading, onChange, onClick }) => {
     }
   };
 
-  const handleKeyDown = (event) => {
+  const handleSubmit = (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
       onClick(value);
@@ -37,9 +37,10 @@ const Header = ({ isLoading, onChange, onClick }) => {
               id="search"
               type="text"
               placeholder="Search city..."
+              pattern="/^[A-Za-z]+$/"
               value={value}
               onChange={(e) => setValue(e.target.value)}
-              onKeyDown={handleKeyDown}
+              onKeyDown={handleSubmit}
               autoFocus
             ></input>
             <button id="submitBtn" type="button" onClick={() => onClick(value)}>

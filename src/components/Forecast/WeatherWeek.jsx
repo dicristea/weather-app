@@ -5,9 +5,7 @@ import HourlyDisplay from "./HourlyDisplay";
 const WeatherWeek = ({ isLoading, weekData, units }) => {
   return (
     <div>
-      <div className="card-header">
-        <h2>5 Day Forecast</h2>
-      </div>
+      <h2>5 Day Forecast</h2>
       {isLoading && <div className="info">Loading...</div>}
       {!isLoading && (
         <div className="main-weather-info">

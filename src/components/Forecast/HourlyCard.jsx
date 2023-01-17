@@ -5,19 +5,16 @@ import Graphic from "../Graphic";
 
 const HourlyCard = ({ data, units }) => {
   const short = true;
-  console.log(data);
-  // const formatDate = () => {
-  //   console.log(data);
-  //   let date = getCurrentDate();
-  //   // console.log(date);
-  // };
 
   return (
-    <div className="hourly-card">
-      <div className="flex-column">
-        <div className="date">{getCurrentDate(data.dt, short)}</div>
-        <Graphic data={data.weather[0].icon}></Graphic>
-        <div>{conversion(units, data.main.temp)}</div>
+    <div className="hourly-card card">
+      <div className="date card-header">
+        <strong>{getCurrentDate(data.dt, short)}</strong>
+      </div>
+      <Graphic data={data.weather[0].icon}></Graphic>
+      <div className="high-low">
+        <div>{`H: ${conversion(units, data.main.temp_max)}`}</div>
+        <div>{`L: ${conversion(units, data.main.temp_min)}`}</div>
       </div>
     </div>
   );

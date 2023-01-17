@@ -18,10 +18,10 @@ const App = () => {
   const [userLocation, setUserLocation] = useState("Los Angeles");
 
   const updateLocation = (newLocation) => {
-    if (newLocation === "") {
-      console.log("No Location provided");
-    } else {
+    if (newLocation) {
       setUserLocation(newLocation);
+    } else {
+      console.log("No Location provided");
     }
   };
 

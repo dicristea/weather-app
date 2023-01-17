@@ -1,9 +1,10 @@
 import React from "react";
 import HourlyCard from "./HourlyCard";
+import "../../styles/Forecast.css";
 
 const HourlyDisplay = ({ weekData, units }) => {
   return (
-    <div className="hourly display">
+    <div className="display">
       {weekData && (
         <div className="hour-display">
           {weekData.list

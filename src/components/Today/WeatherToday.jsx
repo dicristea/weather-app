@@ -50,22 +50,24 @@ const WeatherToday = ({ isLoading, data, units, weekData }) => {
       </div>
       <hr className="card-section-line" />
       <div className="today-bottom-container">
-        <div className="hourly-container">
-          <div className="today-info">
-            {isLoading && (
-              <div className="loading" style={{ placeSelf: "center" }}>
-                Loading...
-              </div>
-            )}
-            {!isLoading && (
-              <div className="flex-column">
-                <h2>Sunrise:</h2>
+        <div className="sun-container">
+          {isLoading && (
+            <div className="loading" style={{ placeSelf: "center" }}>
+              Loading...
+            </div>
+          )}
+          {!isLoading && (
+            <div className="sun">
+              <div className="sunrise card">
+                <h2>Sunrise</h2>
                 <div> {getCurrentTime(data.sys.sunrise)}</div>
-                <h2>Sunset:</h2>
+              </div>
+              <div className="sunset card">
+                <h2>Sunset</h2>
                 <div>{getCurrentTime(data.sys.sunset)}</div>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
