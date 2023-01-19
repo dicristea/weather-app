@@ -18,10 +18,11 @@ const App = () => {
   const [userLocation, setUserLocation] = useState("Los Angeles");
 
   const updateLocation = (newLocation) => {
+    // pattern for newLocation should be at least 2 letters long
     if (newLocation) {
       setUserLocation(newLocation);
     } else {
-      console.log("No Location provided");
+      alert("No Location provided");
     }
   };
 
@@ -45,8 +46,9 @@ const App = () => {
         setData(actualData);
         setError(null);
       } catch (err) {
+        console.log(err.message);
         setError(err.message);
-        setData(null);
+        // setData(null)
       } finally {
         setLoading(false);
       }
@@ -81,9 +83,9 @@ const App = () => {
           setWeekError(null);
         })
         .catch((err) => {
-          console.log(err);
+          console.log(err.message);
           setWeekError(err.message);
-          setWeekData(null);
+          // setWeekData(null);
         })
         .finally(() => {
           setWeekLoading(false);
@@ -99,10 +101,9 @@ const App = () => {
           isLoading={loading}
           onChange={(toggle) => changeUnits(toggle)}
           onClick={updateLocation}
+          invalidLocation={error || weekError ? true : false}
         ></Header>
-        {isMetric}
         <div className="card">
-          {error}
           <WeatherToday
             isLoading={loading}
             data={data}
@@ -111,7 +112,6 @@ const App = () => {
           ></WeatherToday>
         </div>
         <div className="card">
-          {weekError}
           <WeatherWeek
             isLoading={weekLoading}
             weekData={weekData}

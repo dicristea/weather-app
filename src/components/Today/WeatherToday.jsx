@@ -8,7 +8,7 @@ import wind from "../../assets/wind.png";
 import humidity from "../../assets/humidity.png";
 import { getCurrentTime } from "../../utils/GetCurrentTime";
 
-const WeatherToday = ({ isLoading, data, units, weekData }) => {
+const WeatherToday = ({ isLoading, data, units }) => {
   return (
     <div>
       <div className="today-top-container">
