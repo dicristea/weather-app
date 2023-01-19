@@ -7,25 +7,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Features
 
-- Search city location weather forecast
-- View weather temperature, visibility, rain chance, and 'feels like' temp. at specified location
-  today and one week in the future
-- See general weather information for current time up to 1 week in the future
+- Search city for current weather information and 5 day forecast
+- View date, time, weather, temperature, cloudiness, humidity, and 'feels like' temp. at specified location
+- See high/low and icon of weather information for 6 days
 
 ## Todos
 
-- EVERYTHING
-- Make UI responsive for phone screens
-
-## Tools
-
-- OpenWeather API
-- React & ES7 JS
-- ESLint + Airbnb JavaScript Style Guide
-- Prettier Code Formatter
+- dynamic search bar in React (show options when searching)
+- Make UI more responsive for phone screens
 
 ## What I learned
 
+- VERY limited by API (free access information only)
 - React: useEffect and other hooks
   => https://blog.logrocket.com/modern-api-data-fetching-methods-react/
 - ES7 & Async JS (try/catch, Promise/then, async/await)
@@ -33,29 +26,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - css media queries
   --> NEED TO ORGANIZE CSS BETTER!!
 
-## REACT TIPS
+## Tools
 
-- when adding components on click to DOM
-  => add via an object from data storage that renders with newly updated state (Education/Experience components)
-- if something is rendering twice
-  => Strictmode problem? https://stackoverflow.com/questions/66464124/update-inside-react-usestate-setter-being-called-twice
-- Instead of "Prop drilling", use global variable called React Context/ useContext()
-  => https://stackoverflow.com/questions/69675357/react-what-is-the-proper-way-to-do-global-state
-
-## Technical Tips
-
-- reset error and other data (with setState) when working in .then() and .catch() to "prevent inconsistencies for temporary server failiure"
-- type="button" prevents button default of refreshing the page
-- Use gh-pages to host page on github
-  -> https://github.com/gitname/react-gh-pages
-  -> run `npm run deploy`
-- localStorage cannot hold any data type except for strings
-  → JSON data (use JSON.parse(string to object), JSON.stingify(any type to string) methods)
-- `window.location.reload(false)`
-  - reloads page to trigger localStorage display update
-- For inline styling:
-  - React will automatically append a “px” suffix to certain numeric inline style properties. If you want to use units other than “px”, specify the value as a string with the desired unit.
-- Can use ternary operator or utils js for repeated parts
+- OpenWeather API
+- React & ES7 JS
+- ESLint + Airbnb JavaScript Style Guide
+- Prettier Code Formatter
 
 ## Sources
 
@@ -68,11 +44,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Menu Icons:
   <a href="https://www.flaticon.com/free-icons/menu" title="menu icons">Menu icons created by Febrian Hidayat - Flaticon</a>
   <a href="https://fonts.google.com/icons">Google Icons</a>
-
-## Future Updates:
-
-- Accessibility: Windows High Contrast mode --will not see the box-shadow or be able to detect the border color change
-  --> try to make 'outline: 3px solid transparent;' work(????)
 
 ## Learn More: REACT
 
